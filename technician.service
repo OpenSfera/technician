@@ -1,0 +1,13 @@
+[Unit]
+Description=Technician - OpenSfera Service
+After=mongodb.service
+
+[Service]
+Type=idle
+User=root
+WorkingDirectory=/usr/local/sfera/technician
+ExecStart=/usr/bin/python3 /usr/local/sfera/technician/technician.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
